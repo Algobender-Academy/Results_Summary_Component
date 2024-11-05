@@ -370,4 +370,9 @@ a:any-link {
   .card-summary__button {
     padding: 1.06rem 6.69rem 1rem 6.63rem;
   }
+
+  .card-summary__button:hover,
+  .card-summary__button:focus-visible {
+    background-image: var(--GRADIENT-1);
+  }
 }
