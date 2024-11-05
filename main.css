@@ -1,0 +1,373 @@
+@import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* || REST */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* || VARIABLES */
+:root {
+  /* COLORS */
+  --YELLOW: #ffb21e;
+  --BLUE: #1125d6;
+  --GREEN: #00bb8f;
+  --RED: #ff5555;
+  --DARK-NAVY: #303b59;
+  --LIGHT-BLUE: #cac9ff;
+  --VERY-LIGHT-BLUE: #ecf2ff;
+  --WHITE: #fff;
+
+  /* GRADIENTS */
+  --GRADIENT-1: linear-gradient(
+    to bottom,
+    #7755ff 0%,
+    #6943ff 0%,
+    #2f2ce9 100%
+  );
+  --GRADIENT-2: linear-gradient(
+    to bottom,
+    #4d21c9 0%,
+    #2421c900 100%,
+    #2421c900 100%
+  );
+
+  /* TYPOGRAPHY */
+  --FF: "Hanken Grotesk", sans-serif;
+
+  /* Desktop */
+  --HEADING-XL: 800 4.5rem/4.5rem var(--FF);
+  --HEADING-L: bold 2rem var(--FF);
+  --HEADING-M: bold 1.5rem var(--FF);
+  --BODY-BOLD: bold 1.125rem var(--FF);
+  --BODY: 500 1.125rem var(--FF);
+
+  /* Mobile */
+  --HEADING-M-MOB: bold 1.125rem var(--FF);
+  --HEADING-XL-MOB: 800 3.5rem/4.5rem var(--FF);
+  --BODY-BOLD-MOB: bold 1rem var(--FF);
+  --HEADING-L-MOB: bold 1.5rem var(--FF);
+  --BODY-MOB: 500 1rem var(--FF);
+
+  /* SHADOWS */
+  --SHADOW: 0px 30px 60px 0px hsla(224, 82%, 58%, 0.15);
+}
+
+/* || UTILITY CLASSES */
+.offscreen {
+  position: absolute;
+  left: -10000px;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.center {
+  text-align: center;
+}
+
+/* MOBILE FIRST DESIGN */
+/* || GENERAL STYLES */
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  min-height: 100vh;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+h1,
+h2 {
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+  font-weight: normal;
+}
+
+a:any-link {
+  text-decoration: none;
+}
+
+/* || CARD-SUMMARY */
+.card-summary {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  background-color: var(--WHITE);
+}
+
+/* || CARD-SUMMARY-FINAL */
+.card-summary__final {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  gap: 1.5rem;
+  background-image: var(--GRADIENT-1);
+  width: 100%;
+  min-height: 356px;
+  border-radius: 0px 0px 32px 32px;
+  padding: 1.5rem 3.56rem 2.5rem 3.63rem;
+}
+
+.card-summary__sub-title {
+  font: var(--HEADING-M-MOB);
+  color: var(--LIGHT-BLUE);
+}
+
+.card-summary__circle {
+  width: 140px;
+  height: 140px;
+  background-image: var(--GRADIENT-2);
+  display: grid;
+  place-content: center;
+  padding: 1.56rem 2.44rem 1.38rem 2.38rem;
+  border-radius: 50%;
+}
+
+.card-summary__circle .numerator {
+  font: var(--HEADING-XL-MOB);
+  color: white;
+}
+
+.card-summary__circle .denominator {
+  font: var(--BODY-BOLD-MOB);
+  color: var(--LIGHT-BLUE);
+  opacity: 51.68%;
+}
+
+.card-summary__final-text {
+  display: flex;
+  flex-flow: column;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.card-summary__title {
+  font: var(--HEADING-L-MOB);
+  color: var(--WHITE);
+}
+
+.card-summary__sub-text {
+  font: var(--BODY-MOB);
+  color: var(--LIGHT-BLUE);
+  max-width: 260px;
+}
+
+/* || CARD-SUMMARY-DETAILS */
+.card-summary__details {
+  display: flex;
+  flex-flow: column;
+  gap: 1.5rem;
+  margin: 1.5rem 1.88rem 1.88rem 1.88rem;
+}
+
+.card-summary__details-title {
+  font: var(--HEADING-M-MOB);
+  color: var(--DARK-NAVY);
+}
+
+.card-summary__segments {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.segments {
+  width: 100%;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  border-radius: 12px;
+  padding: 1.06rem 1rem 1.125rem 1rem;
+}
+
+.segments-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 12px;
+  background-color: hsla(0, 0%, 100%, 0.95);
+  z-index: 2;
+  width: 100%;
+  height: 56px;
+}
+
+.segments-icon-label {
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 95px;
+}
+
+.segment-label {
+  font: var(--BODY-MOB);
+}
+
+.segments-value {
+  z-index: 2;
+  text-align: right;
+  font: var(--BODY-BOLD-MOB);
+  width: 64px;
+}
+
+.segments-value .numerator {
+  color: var(--DARK-NAVY);
+}
+
+.segments-value .denominator {
+  color: var(--DARK-NAVY);
+  opacity: 50%;
+}
+
+.segments-reaction {
+  background-color: var(--RED);
+}
+
+.red {
+  color: var(--RED);
+}
+
+.segments-memory {
+  background-color: var(--YELLOW);
+}
+
+.yellow {
+  color: var(--YELLOW);
+}
+
+.segments-verbal {
+  background-color: var(--GREEN);
+}
+
+.green {
+  color: var(--GREEN);
+}
+
+.segments-visual {
+  background-color: var(--BLUE);
+}
+
+.blue {
+  color: var(--BLUE);
+}
+
+.card-summary__button {
+  display: block;
+  width: 100%;
+  height: 56px;
+  padding: 1.06rem 7.5rem 1rem 7.5rem;
+  background-color: var(--DARK-NAVY);
+  color: white;
+  border-radius: 128px;
+  font: var(--BODY-BOLD);
+}
+
+/* Tablet & Desktop */
+@media screen and (min-width: 768px) {
+  body {
+    display: grid;
+    place-content: center;
+  }
+
+  /* || CARD-SUMMARY */
+  .card-summary {
+    max-width: 736px;
+    min-height: 512px;
+    flex-flow: row;
+    border-radius: 32px;
+    box-shadow: var(--SHADOW);
+    align-items: center;
+  }
+
+  /* || CARD-SUMMARY-FINAL */
+  .card-summary__final {
+    gap: 0px;
+    max-width: 368px;
+    min-height: 512px;
+    border-radius: 32px;
+    padding: 1.75rem 3.38rem 2.88rem 3.38rem;
+  }
+
+  .card-summary__sub-title {
+    font: var(--HEADING-M);
+    margin-bottom: 2.19rem;
+  }
+
+  .card-summary__circle {
+    width: 200px;
+    height: 200px;
+    padding: 3.44rem 3.75rem 2.88rem 3.69rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .card-summary__circle .numerator {
+    font: var(--HEADING-XL);
+  }
+
+  .card-summary__circle .denominator {
+    font: var(--BODY-BOLD);
+  }
+
+  .card-summary__final-text {
+    gap: 0.875rem;
+  }
+
+  .card-summary__title {
+    font: var(--HEADING-L);
+  }
+
+  .card-summary__sub-text {
+    font: var(--BODY);
+  }
+
+  /* || CARD-SUMMARY-DETAILS */
+  .card-summary__details {
+    gap: 0rem;
+    margin: 2.38rem 2.5rem 2.88rem 2.5rem;
+  }
+
+  .card-summary__details-title {
+    font: var(--HEADING-M);
+    margin-bottom: 1.75rem;
+  }
+
+  .card-summary__segments {
+    margin-bottom: 2.56rem;
+  }
+
+  .segments {
+    padding: 1.06rem 1rem 1rem 1rem;
+  }
+
+  .segments-icon-label {
+    width: 103px;
+  }
+
+  .segment-label {
+    font: var(--BODY);
+  }
+
+  .segments-value {
+    font: var(--BODY-BOLD);
+    width: 72px;
+  }
+
+  .card-summary__button {
+    padding: 1.06rem 6.69rem 1rem 6.63rem;
+  }
+}

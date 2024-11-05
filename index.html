@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Nkosinathi Manu Dhanda" />
+    <meta name="description" content="A Results Summary Component" />
+    <title>Results Summary Component</title>
+    <link rel="stylesheet" href="main.css" />
+    <link
+      rel="shortcut icon"
+      href="./images/favicon-32x32.png"
+      type="image/x-icon"
+    />
+  </head>
+
+  <body>
+    <article class="card-summary">
+      <section class="card-summary__final">
+        <h2 class="card-summary__sub-title">Your Results</h2>
+
+        <div class="card-summary__circle">
+          <div class="numerator center">76</div>
+          <div class="denominator center">of 100</div>
+        </div>
+
+        <div class="card-summary__final-text">
+          <h1 class="card-summary__title">Great</h1>
+          <p class="card-summary__sub-text center">
+            Your performance exceed 65% of the people conducting the test here!
+          </p>
+        </div>
+      </section>
+
+      <section class="card-summary__details">
+        <h2 class="card-summary__details-title">Summary</h2>
+
+        <section class="card-summary__segments">
+          <div class="segments segments-reaction">
+            <div class="segments-overlay"></div>
+            <div class="segments-icon-label">
+              <figure class="segments-reaction-icon">
+                <img
+                  src="./images/icon-reaction.svg"
+                  alt="icon-reaction"
+                  width="20"
+                  height="20"
+                  loading="lazy"
+                />
+                <figcaption class="offscreen">icon-reaction</figcaption>
+              </figure>
+
+              <p class="segment-label red">Reaction</p>
+            </div>
+
+            <p class="segments-value">
+              <span class="numerator">80</span>
+              <span class="denominator">/ 100</span>
+            </p>
+          </div>
+
+          <div class="segments segments-memory">
+            <div class="segments-overlay"></div>
+            <div class="segments-icon-label">
+              <figure class="segments-memory-icon">
+                <img
+                  src="./images/icon-memory.svg"
+                  alt="icon-memory"
+                  width="20"
+                  height="20"
+                  loading="lazy"
+                />
+                <figcaption class="offscreen">icon-memory</figcaption>
+              </figure>
+
+              <p class="segment-label yellow">Memory</p>
+            </div>
+
+            <p class="segments-value">
+              <span class="numerator">92</span>
+              <span class="denominator">/ 100</span>
+            </p>
+          </div>
+
+          <div class="segments segments-verbal">
+            <div class="segments-overlay"></div>
+            <div class="segments-icon-label">
+              <figure class="segments-verbal-icon">
+                <img
+                  src="./images/icon-verbal.svg"
+                  alt="icon-verbal"
+                  width="20"
+                  height="20"
+                  loading="lazy"
+                />
+                <figcaption class="offscreen">icon-verbal</figcaption>
+              </figure>
+
+              <p class="segment-label green">Verbal</p>
+            </div>
+
+            <p class="segments-value">
+              <span class="numerator">61</span>
+              <span class="denominator">/ 100</span>
+            </p>
+          </div>
+
+          <div class="segments segments-visual">
+            <div class="segments-overlay"></div>
+            <div class="segments-icon-label">
+              <figure class="segments-visual-icon">
+                <img
+                  src="./images/icon-visual.svg"
+                  alt="icon-visual"
+                  width="20"
+                  height="20"
+                  loading="lazy"
+                />
+                <figcaption class="offscreen">icon-visual</figcaption>
+              </figure>
+
+              <p class="segment-label blue">Visual</p>
+            </div>
+
+            <p class="segments-value">
+              <span class="numerator">73</span>
+              <span class="denominator">/ 100</span>
+            </p>
+          </div>
+        </section>
+
+        <a href="#" class="card-summary__button center">Continue</a>
+      </section>
+    </article>
+  </body>
+</html>
