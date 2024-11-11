@@ -24,6 +24,7 @@ img {
   --LIGHT-BLUE: #cac9ff;
   --VERY-LIGHT-BLUE: #ecf2ff;
   --WHITE: #fff;
+  --WHITE-95: hsla(0, 0%, 100%, 0.95);
 
   /* GRADIENTS */
   --GRADIENT-1: linear-gradient(
@@ -39,25 +40,25 @@ img {
     #2421c900 100%
   );
 
+  /* SHADOW */
+  --SHADOW: 0px 30px 60px 0px hsla(224, 82%, 58%, 0.15);
+
   /* TYPOGRAPHY */
   --FF: "Hanken Grotesk", sans-serif;
 
-  /* Desktop */
+  /* DESKTOP */
   --HEADING-XL: 800 4.5rem/4.5rem var(--FF);
   --HEADING-L: bold 2rem var(--FF);
   --HEADING-M: bold 1.5rem var(--FF);
-  --BODY-BOLD: bold 1.125rem var(--FF);
-  --BODY: 500 1.125rem var(--FF);
+  --BODY-BOLD: bold 1.13rem var(--FF);
+  --BODY: normal 1.13rem var(--FF);
 
-  /* Mobile */
-  --HEADING-M-MOB: bold 1.125rem var(--FF);
+  /* MOBILE */
   --HEADING-XL-MOB: 800 3.5rem/4.5rem var(--FF);
-  --BODY-BOLD-MOB: bold 1rem var(--FF);
   --HEADING-L-MOB: bold 1.5rem var(--FF);
+  --HEADING-M-MOB: bold 1.13rem var(--FF);
+  --BODY-BOLD-MOB: bold 1rem var(--FF);
   --BODY-MOB: 500 1rem var(--FF);
-
-  /* SHADOWS */
-  --SHADOW: 0px 30px 60px 0px hsla(224, 82%, 58%, 0.15);
 }
 
 /* || UTILITY CLASSES */
@@ -99,25 +100,25 @@ a:any-link {
   text-decoration: none;
 }
 
-/* || CARD-SUMMARY */
+/* CARD-SUMMARY */
 .card-summary {
   width: 100%;
-  display: flex;
-  flex-flow: column;
+  min-height: 809px;
   background-color: var(--WHITE);
 }
 
-/* || CARD-SUMMARY-FINAL */
+/* CARD-SUMMARY-FINAL */
 .card-summary__final {
+  max-width: 100%;
+  min-height: 356px;
+  background-image: var(--GRADIENT-1);
+  border-radius: 0px 0px 32px 32px;
+  padding: 1.5rem 3.56rem 2.5rem 3.63rem;
   display: flex;
   flex-flow: column;
   align-items: center;
   gap: 1.5rem;
-  background-image: var(--GRADIENT-1);
-  width: 100%;
-  min-height: 356px;
-  border-radius: 0px 0px 32px 32px;
-  padding: 1.5rem 3.56rem 2.5rem 3.63rem;
+  margin-bottom: 1.5rem;
 }
 
 .card-summary__sub-title {
@@ -129,15 +130,13 @@ a:any-link {
   width: 140px;
   height: 140px;
   background-image: var(--GRADIENT-2);
-  display: grid;
-  place-content: center;
   padding: 1.56rem 2.44rem 1.38rem 2.38rem;
   border-radius: 50%;
 }
 
 .card-summary__circle .numerator {
   font: var(--HEADING-XL-MOB);
-  color: white;
+  color: var(--WHITE);
 }
 
 .card-summary__circle .denominator {
@@ -149,8 +148,8 @@ a:any-link {
 .card-summary__final-text {
   display: flex;
   flex-flow: column;
-  gap: 0.5rem;
   align-items: center;
+  gap: 0.5rem;
 }
 
 .card-summary__title {
@@ -164,12 +163,12 @@ a:any-link {
   max-width: 260px;
 }
 
-/* || CARD-SUMMARY-DETAILS */
+/* CARD-SUMMARY-DETAILS */
 .card-summary__details {
+  margin: 0rem 1.88rem 1.88rem 1.88rem;
   display: flex;
   flex-flow: column;
   gap: 1.5rem;
-  margin: 1.5rem 1.88rem 1.88rem 1.88rem;
 }
 
 .card-summary__details-title {
@@ -192,18 +191,34 @@ a:any-link {
   justify-content: space-between;
   position: relative;
   border-radius: 12px;
-  padding: 1.06rem 1rem 1.125rem 1rem;
+  padding: 1.06rem 1rem 1.13rem 1rem;
+}
+
+.segments-reaction {
+  background-color: var(--RED);
+}
+
+.segments-memory {
+  background-color: var(--YELLOW);
+}
+
+.segments-verbal {
+  background-color: var(--GREEN);
+}
+
+.segments-visual {
+  background-color: var(--BLUE);
 }
 
 .segments-overlay {
+  background-color: var(--WHITE-95);
+  z-index: 1;
+  width: 100%;
+  height: 56px;
   position: absolute;
   top: 0;
   left: 0;
   border-radius: 12px;
-  background-color: hsla(0, 0%, 100%, 0.95);
-  z-index: 2;
-  width: 100%;
-  height: 56px;
 }
 
 .segments-icon-label {
@@ -218,11 +233,25 @@ a:any-link {
   font: var(--BODY-MOB);
 }
 
+.red {
+  color: var(--RED);
+}
+
+.yellow {
+  color: var(--YELLOW);
+}
+
+.green {
+  color: var(--GREEN);
+}
+
+.blue {
+  color: var(--BLUE);
+}
+
 .segments-value {
   z-index: 2;
-  text-align: right;
   font: var(--BODY-BOLD-MOB);
-  width: 64px;
 }
 
 .segments-value .numerator {
@@ -234,73 +263,41 @@ a:any-link {
   opacity: 50%;
 }
 
-.segments-reaction {
-  background-color: var(--RED);
-}
-
-.red {
-  color: var(--RED);
-}
-
-.segments-memory {
-  background-color: var(--YELLOW);
-}
-
-.yellow {
-  color: var(--YELLOW);
-}
-
-.segments-verbal {
-  background-color: var(--GREEN);
-}
-
-.green {
-  color: var(--GREEN);
-}
-
-.segments-visual {
-  background-color: var(--BLUE);
-}
-
-.blue {
-  color: var(--BLUE);
-}
-
 .card-summary__button {
   display: block;
-  width: 100%;
-  height: 56px;
-  padding: 1.06rem 7.5rem 1rem 7.5rem;
   background-color: var(--DARK-NAVY);
-  color: white;
   border-radius: 128px;
+  color: var(--WHITE);
   font: var(--BODY-BOLD);
+  padding: 1.06rem 7.5rem 1rem 7.5rem;
 }
 
-/* Tablet & Desktop */
+/* Tablet */
 @media screen and (min-width: 768px) {
   body {
     display: grid;
     place-content: center;
+    background-color: var(--VERY-LIGHT-BLUE);
   }
 
-  /* || CARD-SUMMARY */
+  /* CARD-SUMMARY */
   .card-summary {
     max-width: 736px;
     min-height: 512px;
-    flex-flow: row;
+    display: flex;
+    align-items: center;
     border-radius: 32px;
     box-shadow: var(--SHADOW);
-    align-items: center;
   }
 
-  /* || CARD-SUMMARY-FINAL */
+  /* CARD-SUMMARY-FINAL */
   .card-summary__final {
-    gap: 0px;
     max-width: 368px;
     min-height: 512px;
     border-radius: 32px;
-    padding: 1.75rem 3.38rem 2.88rem 3.38rem;
+    padding: 2.38rem 3.38rem 2.88rem 3.38rem;
+    gap: 0rem;
+    margin-bottom: 0rem;
   }
 
   .card-summary__sub-title {
@@ -324,7 +321,7 @@ a:any-link {
   }
 
   .card-summary__final-text {
-    gap: 0.875rem;
+    gap: 0.88rem;
   }
 
   .card-summary__title {
@@ -335,10 +332,10 @@ a:any-link {
     font: var(--BODY);
   }
 
-  /* || CARD-SUMMARY-DETAILS */
+  /* CARD-SUMMARY-DETAILS */
   .card-summary__details {
-    gap: 0rem;
     margin: 2.38rem 2.5rem 2.88rem 2.5rem;
+    gap: 0rem;
   }
 
   .card-summary__details-title {
@@ -364,13 +361,15 @@ a:any-link {
 
   .segments-value {
     font: var(--BODY-BOLD);
-    width: 72px;
   }
 
   .card-summary__button {
     padding: 1.06rem 6.69rem 1rem 6.63rem;
   }
+}
 
+/* Desktop */
+@media screen and (min-width: 992px) {
   .card-summary__button:hover,
   .card-summary__button:focus-visible {
     background-image: var(--GRADIENT-1);
